@@ -9,10 +9,13 @@
     @livewireStyles
 </head>
 <body>
-    <h1>Welcome to livewire project </h1>
+    <h1 style="text-align: center;">Welcome to livewire project </h1>
     
-    @livewire('post', ['name' => 'Sunno Bappy'])
+    {{-- @livewire('post', ['name' => 'Sunno Bappy']) --}}
 
+    @livewire('category')
+    <br>
+    @livewire('category-list')
     {{-- <livewire:post/> --}}
     @livewireScripts
 </body>

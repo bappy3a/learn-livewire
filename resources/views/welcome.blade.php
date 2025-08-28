@@ -16,33 +16,9 @@
 
 
     <form class="mx-auto columns-3 p-20">
-        <label for="small" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Small select</label>
-        <select id="small"
-            class="bg-gray-50 border border-gray-300 text-gray-900 mb-6 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-            <option selected>Choose a country</option>
-            <option value="US">United States</option>
-            <option value="CA">Canada</option>
-            <option value="FR">France</option>
-            <option value="DE">Germany</option>
-        </select>
-        <label for="default" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Default select</label>
-        <select id="default"
-            class="bg-gray-50 border border-gray-300 text-gray-900 mb-6 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-            <option selected>Choose a country</option>
-            <option value="US">United States</option>
-            <option value="CA">Canada</option>
-            <option value="FR">France</option>
-            <option value="DE">Germany</option>
-        </select>
-        <label for="large" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Large select</label>
-        <select id="large"
-            class="bg-gray-50 border border-gray-300 text-gray-900 mb-6 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-            <option selected>Choose a country</option>
-            <option value="US">United States</option>
-            <option value="CA">Canada</option>
-            <option value="FR">France</option>
-            <option value="DE">Germany</option>
-        </select>
+        @livewire('division-select')
+        @livewire('district-select')
+        @livewire('upazila-select')
     </form>
 
 

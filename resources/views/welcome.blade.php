@@ -13,10 +13,17 @@
     
     {{-- @livewire('post', ['name' => 'Sunno Bappy']) --}}
 
-    @livewire('category')
+    {{-- @livewire('category')
     <br>
-    @livewire('category-list')
+    @livewire('category-list') --}}
     {{-- <livewire:post/> --}}
+
+
+
+    @livewire('category-select')
+    <livewire:sub-category-select />
+    
+
     @livewireScripts
 </body>
 </html>

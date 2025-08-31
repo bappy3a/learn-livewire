@@ -1,5 +1,4 @@
-<div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8"
-x-data="{ hasMore: @entangle('hasMore'), loading: @entangle('loading') }"
+<div  x-data="{ hasMore: @entangle('hasMore'), loading: @entangle('loading') }"
     x-init="
         const sentinel = $refs.sentinel;
         const observer = new IntersectionObserver((entries) => {
@@ -18,26 +17,38 @@ x-data="{ hasMore: @entangle('hasMore'), loading: @entangle('loading') }"
     class="p-4"
 >
 
-    @foreach ($items as $key=>$product)
-        <div class="group relative">
-            <img src="{{ $product->image }}"
-                alt="Front of men&#039;s Basic Tee in black."
-                class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80" />
-            <div class="mt-4 flex justify-between">
-                <div>
-                    <h3 class="text-sm text-gray-700">
-                        <a href="#">
-                            <span aria-hidden="true" class="absolute inset-0"></span>
-                            {{ $product->name }}
-                        </a>
-                    </h3>
-                    <p class="mt-1 text-sm text-gray-500">Id {{ $product->id }}</p>
-                </div>
-                <p class="text-sm font-medium text-gray-900">${{ number_format($product->price,2) }}</p>
-            </div>
+<div class="grid grid-flow-col grid-rows-2 gap-4">
+    <div class="row-span-2 order-first">
+        <h2 class="text-2xl font-bold tracking-tight text-gray-900">Customers also purchased</h2>
+    </div>
+    <div class="col-span-2 order-last">
+        <div>
+            <input type="text" wire:model.live="search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="John" required />
         </div>
-    @endforeach
-
+        <p class="text-black">{{$search}}</p>
+    </div>
+</div>
+    <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+        @foreach ($items as $key=>$product)
+            <div class="group relative">
+                <img src="{{ $product->image }}"
+                    alt="Front of men&#039;s Basic Tee in black."
+                    class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80" />
+                <div class="mt-4 flex justify-between">
+                    <div>
+                        <h3 class="text-sm text-gray-700">
+                            <a href="#">
+                                <span aria-hidden="true" class="absolute inset-0"></span>
+                                {{ $product->name }}
+                            </a>
+                        </h3>
+                        <p class="mt-1 text-sm text-gray-500">Id {{ $product->id }}</p>
+                    </div>
+                    <p class="text-sm font-medium text-gray-900">${{ number_format($product->price,2) }}</p>
+                </div>
+            </div>
+        @endforeach
+    </div>
     {{-- Loading indicator --}}
     <div wire:loading.class.remove="hidden" class="hidden py-6 text-center text-gray-500">
         Loading…
